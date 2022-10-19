@@ -1,0 +1,4 @@
+{% set features = ['hostname', 'aaa', 'syslog', 'ntp', 'vlan', 'dns'] %}
+{% for feature in features %}
+{% include os ~ '/' ~ feature ~ '.j2' %}
+{% endfor %}
