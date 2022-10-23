@@ -4,4 +4,4 @@ logging source-interface {{ logging['source_intf'] }}
 {% for log_host in logging['hosts'] -%}  
 logging host {{ log_host }}
 {% endfor %}
-logging trap informational
+logging trap notification
