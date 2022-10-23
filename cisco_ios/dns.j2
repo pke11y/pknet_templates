@@ -1,7 +1,2 @@
 !
-ip name-server{% for dns_server in dns['servers'] %} {{ dns_server }}{% endfor %}
-
 ip domain lookup source-interface {{ dns['source_intf'] }}
-{% for domain in dns_domains %}
-ip domain name {{ domain }}
-{% endfor %}
