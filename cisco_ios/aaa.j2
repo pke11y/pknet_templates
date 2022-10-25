@@ -11,6 +11,6 @@ aaa accounting network default start-stop group tacacs+
 aaa accounting connection default start-stop group tacacs+
 aaa accounting system default start-stop group tacacs+
 aaa session-id common
-{% for aaa_server in aaa_servers %}
+{% for aaa_server in config_context['aaa_servers'] %}
 radius server host {{ aaa_server['host'] }} key {{ aaa_server['cipher'] }}
 {% endfor %}
