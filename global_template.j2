@@ -1,4 +1,6 @@
-{% set features = ['hostname', 'aaa', 'stp', 'dns', 'vlan', 'ssh', 'syslog', 'banner', 'access-list', 'ntp'] %}
-{% for feature in features %}
-{% include platform['slug'] ~ '/' ~ feature ~ '.j2' %}
-{% endfor %}
+{% set role_mapping = {} %}
+{% set role = role_mapping['device_role'] | default('default') %}
+{% set design_rev = config_context['design_revision'] | default('v1.0') %}
+{% set root_path = './cisco_ios/' ~ design_rev %}
+{% set include_path = root_path ~ '/' ~ role %}
+{% include root_path ~ '/' ~ role ~ '_main.j2' %}

@@ -1,6 +1,4 @@
-!
 {% for vlan_id, vlan in config_context['vlans'].items() %}
 vlan {{ vlan_id }}
  name {{ vlan['name'] }}
 {% endfor %}
-!
