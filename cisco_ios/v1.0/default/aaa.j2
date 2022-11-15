@@ -2,5 +2,5 @@ aaa new-model
 aaa authentication login default group radius local
 aaa authorization exec default group radius local
 {% for aaa_server in config_context['aaa_servers'] %}
-radius server host {{ aaa_server['host'] }} key {{ aaa_server['cipher'] }}
+radius-server host {{ aaa_server['host'] }} key {{ aaa_server['cipher'] }}
 {% endfor %}
