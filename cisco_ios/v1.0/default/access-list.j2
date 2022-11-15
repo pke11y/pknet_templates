@@ -1,6 +1,6 @@
 {% for acl in config_context['access_lists'] %}
 ip access-list {{ acl['type'] }} {{ acl['name'] }}
- {% for entry in acl['entries'] %}
+{% for entry in acl['entries'] %}
  permit {{ entry['dst_ip'] }} log
- {% endfor %}
+{% endfor %}
 {% endfor %}
